@@ -10,7 +10,7 @@ RUN        pip install -r requirements.txt
 COPY       *.py /app/
 RUN        chmod a+x *.py
 
-COPY db.json /app/db.json
+COPY      database.json /app/
 
 
 CMD ["python", "main.py"]
