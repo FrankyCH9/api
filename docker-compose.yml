@@ -1,9 +1,15 @@
+version: '3'
+
+networks:
+  my_network:
+    driver: bridge
+
 services:
   api:
     build: ./api
     image: linkextractor-api:step5-python
     ports:
-      - "5000:80"
+      - "5000:80"  # Cambiado el puerto del contenedor a 80 para usar el predeterminado de FastAPI
     environment:
       - REDIS_URL=redis://redis:6379
     depends_on:
