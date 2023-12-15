@@ -7,8 +7,7 @@ WORKDIR    /app
 COPY       requirements.txt /app/
 RUN        pip install -r requirements.txt
 
-COPY       main.py /app/
-COPY linkenxtraxtor.py /app/
-RUN        chmod a+x main.py
+COPY       *.py /app/
+RUN        chmod a+x *.py
 
 CMD ["python", "main.py"]
