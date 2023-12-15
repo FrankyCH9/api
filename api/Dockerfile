@@ -1,15 +1,9 @@
-FROM       python:3
-LABEL      maintainer="Sawood Alam <@ibnesayeed>"
+FROM python:3
 
-ENV        REDIS_URL="redis://localhost:6379"
+WORKDIR /app
+COPY requirements.txt /app/
+RUN pip install -r requirements.txt
 
-WORKDIR    /app
-COPY       requirements.txt /app/
-RUN        pip install -r requirements.txt
-
-COPY       main.py /app/
-COPY linkenxtraxtor.py /app/
-
-RUN        chmod a+x main.py
+COPY . /app/
 
 CMD ["python", "main.py"]
