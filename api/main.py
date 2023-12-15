@@ -8,7 +8,7 @@ import pandas as pd
 from linkextractor import columnas
 import numpy as np
 from scipy.spatial.distance import cityblock
-import uvicorn
+
 
 app = FastAPI()
 
@@ -142,6 +142,6 @@ def get_csv():
         raise HTTPException(status_code=404, detail="No hay valores finales almacenados en Redis")
 
 if __name__ == "__main__":
-    
+    import uvicorn
 
     uvicorn.run(app, host="0.0.0.0", port=8000)
