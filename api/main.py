@@ -37,10 +37,10 @@ valores_final = {}
 peliculas_p = {}
 csv_data = []
 
-def cargar_datos_desde_json(nombre_archivo):
-    with open(nombre_archivo, 'r') as archivo_json:
-        return json.load(archivo_json)
-
+def cargar_datos_desde_json(nombre_archivo_json):
+    ruta_completa = os.path.join(os.path.dirname(__file__), nombre_archivo_json)
+    with open(ruta_completa, 'r') as archivo_json:
+        # Tu lógica de carga de datos aquí
 # Cargar datos desde el archivo JSON al iniciar la aplicación
 nombre_archivo_json = 'db.json'
 datos_json = cargar_datos_desde_json(nombre_archivo_json)
