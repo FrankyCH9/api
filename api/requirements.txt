@@ -1,0 +1,7 @@
+beautifulsoup4
+fastapi
+redis
+requests
+pandas
+numpy
+scipy
